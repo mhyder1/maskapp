@@ -6,6 +6,6 @@ Assignment: Once you've completed your app, push your work up to GitHub, and pub
 
 Submit a link to your repo and live site below. online shopping
 
-Live link: https://username-github-io
+Live link: https://malasia-415.github.io
 
 # Online shopping 
