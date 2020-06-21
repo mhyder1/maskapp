@@ -1,5 +1,6 @@
 function getProduct() {
-    fetch('l3a7mjohsu0hq3fbwq6p7pd3')
+  console.log('getProduct')
+    fetch('https://openapi.etsy.com/v2/listings/active?api_key=l3a7mjohsu0hq3fbwq6p7pd3')
       .then(response => response.json())
       .then(responseJson => 
         displayResults(responseJson))
@@ -7,11 +8,11 @@ function getProduct() {
   }
 
 function displayResults(responseJson) {
-console.log(responseJson);
-$('.results-img').replaceWith(
-    `<img src="${responseJson.message}" class="results-img">`
-)
-$('.results').removeClass('hidden');
+  console.log(responseJson);
+  $('.results-img').replaceWith(
+      `<img src="${responseJson.message}" class="results-img">`
+  )
+  $('.results').removeClass('hidden');
 }
 
 function watchForm() {
@@ -22,6 +23,6 @@ function watchForm() {
   }
 
 $(function() {
-console.log('App loaded! Waiting for submit!');
-watchForm();
+  console.log('App loaded! Waiting for submit!');
+  watchForm();
 });
