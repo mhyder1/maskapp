@@ -3,29 +3,16 @@ body {
     font-family: 'Roboto', sans-serif;
     background-image: url("https://st2.depositphotos.com/4259495/7423/i/950/depositphotos_74233407-stock-photo-colorful-watercolor-grunge-texture-background.jpg");
   }
-  
-  img{
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 350px;
-    border: 1px solid whitesmoke;
-    display: inline-block;
-  
-  }
 
   .title {
+    font-weight: bold;
+  }
+  .price {
     font-weight: bold;
   }
   
   h1{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  
-  
-  h2 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: xx-large;
   }
   
   fieldset {
