@@ -12,24 +12,25 @@ function eventListeners(){
 function getProduct() {
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
   let url = "https://openapi.etsy.com";
-  const path = "/v2/listings/active?limit=20&keywords=mask";
+  const path = "/v2/listings/active?limit=10&keywords=mask";
   const api_key = "&api_key=l3a7mjohsu0hq3fbwq6p7pd3"
   const fetchurl = `${proxyurl}${url}${path}${api_key}`
 
-  // fetch(fetchurl)
-  //   .then(response => response.json())
+  fetch(fetchurl)
+    .then(response => response.json())
       
-  //   .then(responseJson => {
-  //       let items = responseJson.results
-  //       let itemList = ""
+    .then(responseJson => {
+        let items = responseJson.results
+        let itemList = ""
 
-  //       items.forEach(item => {
-  //         itemList += `<li data-id=${item.listing_id}><span class ="title"> <a href = ${item.url}> ${item.title} </a></span> 
-  //           <br> Made of: ${item.materials} <br> Production: ${item.when_made} <br> <span class="price">Price: ${item.price},</span> ${item.currency_code}<br><br></li>`
+        items.forEach(item => {
+          itemList += `<li data-id=${item.listing_id}><span class ="title"> <a href = ${item.url}> ${item.title} </a></span> 
+            <br> Made of: ${item.materials} <br> Production: ${item.when_made} <br> <span class="price">Price: ${item.price},</span> ${item.currency_code}<br><br></li>`
           
-  //       })
-  //       $("#items-container").append(itemList);
-      // })
+        })
+        $("#items-container").append(itemList);
+      })
+
 
   url = "https://www.googleapis.com/youtube/v3/search?part =snippet &maxResults=10&q=COVID-19&key=AIzaSyCORX3JUBUgtVvHFsyzFG2AbTk_ABCat4g"
   fetch(url) 
@@ -46,6 +47,33 @@ function getProduct() {
     })
     
   }
+
+  // function stats() {
+    
+  //   let url = "https://api.smartable.ai/coronavirus/stats/US";
+
+  //   fetch(url, {
+  //     headers: {
+  //       "Subscription-Key": "758efda7ac81492daebae5d0886cbd78"
+  //     } 
+  //   })
+  //     .then(response => response.json())
+
+  //     .then(responseJson => {
+  //       let stats = responseJson.results
+  //       console.log(responseJson)
+  //       let statsList = ""
+  //     })
+
+  //     items.forEach(item => {
+  //       itemList += `<li data-id=${item.location}><span class ="total_confirmed">${item.totalConfirmedCases}</span> 
+  //       <br> Newly confirmed: ${item.newlyConfirmedCases} <br> Total daeths: ${item.totalDeaths} <br> <span class="new_deaths">New deaths: ${item.newDeaths}<br></li>`
+  //     })
+  // }
+  // stats();
+  
+  
+  
   // make a few API calls then join them to the DOM
   //Start with one API at a time
   //Chartjs
