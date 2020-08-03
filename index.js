@@ -32,45 +32,45 @@ function getProduct() {
       })
 
 
-  url = "https://www.googleapis.com/youtube/v3/search?part =snippet &maxResults=10&q=COVID-19&key=AIzaSyCORX3JUBUgtVvHFsyzFG2AbTk_ABCat4g"
-  fetch(url) 
-    .then(res => res.json())
-    .then(data => {
-    let results = ""
-    data.items.forEach(video => {
-      results += `
-        <iframe id="ytplayer" type="text/html" width="200" height="200" 
-        src="https://www.youtube.com/embed/${video.id.videoId}?autoplay=0" frameborder="0"></iframe>
-      `
-    })
-    $("#items-container").html(results)
-    })
+  // url = "https://www.googleapis.com/youtube/v3/search?part =snippet &maxResults=10&q=COVID-19&key=AIzaSyCORX3JUBUgtVvHFsyzFG2AbTk_ABCat4g"
+  // fetch(url) 
+  //   .then(res => res.json())
+  //   .then(data => {
+  //   let results = ""
+  //   data.items.forEach(video => {
+  //     results += `
+  //       <iframe id="ytplayer" type="text/html" width="200" height="200" 
+  //       src="https://www.youtube.com/embed/${video.id.videoId}?autoplay=0" frameborder="0"></iframe>
+  //     `
+  //   })
+  //   $("#items-container").html(results)
+  //   })
     
   }
 
-  // function stats() {
+  function stats() {
     
-  //   let url = "https://api.smartable.ai/coronavirus/stats/US";
+    let url = "https://api.smartable.ai/coronavirus/stats/US";
 
-  //   fetch(url, {
-  //     headers: {
-  //       "Subscription-Key": "758efda7ac81492daebae5d0886cbd78"
-  //     } 
-  //   })
-  //     .then(response => response.json())
+    fetch(url, {
+      headers: {
+        "Subscription-Key": "758efda7ac81492daebae5d0886cbd78"
+      } 
+    })
+      .then(response => response.json())
 
-  //     .then(responseJson => {
-  //       let stats = responseJson.results
-  //       console.log(responseJson)
-  //       let statsList = ""
-  //     })
+      .then(responseJson => {
+        let stats = responseJson.totalDeaths.newDeaths
+        console.log(responseJson)
+        let statsList = ""
 
-  //     items.forEach(item => {
-  //       itemList += `<li data-id=${item.location}><span class ="total_confirmed">${item.totalConfirmedCases}</span> 
-  //       <br> Newly confirmed: ${item.newlyConfirmedCases} <br> Total daeths: ${item.totalDeaths} <br> <span class="new_deaths">New deaths: ${item.newDeaths}<br></li>`
-  //     })
-  // }
-  // stats();
+        stats.forEach(item => {
+          statsList += `<li data-id=${item.location}><span class ="total_confirmed">${item.totalConfirmedCases}</span> 
+          <br> Newly confirmed: ${item.newlyConfirmedCases} <br> Total daeths: ${item.totalDeaths} <br> <span class="new_deaths">New deaths: ${item.newDeaths}<br></li>`
+        })
+      })  
+  }
+  stats();
   
   
   
@@ -98,5 +98,6 @@ function watchForm() {
 
 (function() {
   console.log('App loaded! Waiting for submit!');
-  watchForm();
+  // watchForm();
+  getProduct();
 })()
