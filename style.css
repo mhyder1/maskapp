@@ -1,7 +1,7 @@
 body {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    background-image: url("https://st2.depositphotos.com/4259495/7423/i/950/depositphotos_74233407-stock-photo-colorful-watercolor-grunge-texture-background.jpg");
+    background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/06/Solid-color-hd-wallpapers-download.jpg");
   }
 
   .title {
@@ -16,9 +16,10 @@ body {
   }
 
   #items-container {
-    display: flexbox;
+    display: table-caption;
     align-items: flex-end;
-    
+    border-style: groove;
+    min-width: max-content;
   }
   
   
