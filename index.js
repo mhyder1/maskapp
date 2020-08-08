@@ -11,7 +11,7 @@ function eventListeners(){
 
 function getProduct() {
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  let url = "https://openapi.etsy.com";
+  const url = "https://openapi.etsy.com";
   const path = "/v2/listings/active?limit=10&keywords=mask";
   const api_key = "&api_key=l3a7mjohsu0hq3fbwq6p7pd3"
   const fetchurl = `${proxyurl}${url}${path}${api_key}`
@@ -50,7 +50,7 @@ function getProduct() {
 
   function stats() {
     
-    let url = "https://api.smartable.ai/coronavirus/stats/US";
+    const url = "https://api.smartable.ai/coronavirus/stats/US";
 
     fetch(url, {
       headers: {
