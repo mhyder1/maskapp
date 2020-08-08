@@ -61,7 +61,6 @@ function getProduct() {
 
       .then(responseJson => {
         let stats = responseJson.totalDeaths.newDeaths
-        console.log(responseJson)
         let statsList = ""
 
         stats.forEach(item => {
@@ -97,7 +96,6 @@ function watchForm() {
   }
 
 (function() {
-  console.log('App loaded! Waiting for submit!');
   // watchForm();
   getProduct();
 })()
