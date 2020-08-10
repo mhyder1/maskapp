@@ -67,7 +67,9 @@ function getProduct() {
           statsList += `<li data-id=${item.location}><span class ="total_confirmed">${item.totalConfirmedCases}</span> 
           <br> Newly confirmed: ${item.newlyConfirmedCases} <br> Total daeths: ${item.totalDeaths} <br> <span class="new_deaths">New deaths: ${item.newDeaths}<br></li>`
         })
-      })  
+      })
+
+    } 
     stats();
     
   
@@ -95,7 +97,6 @@ function watchForm() {
   }
 
 (function() {
-  watchForm();
+  //watchForm();
   getProduct();
-})
-// ()
+})()
