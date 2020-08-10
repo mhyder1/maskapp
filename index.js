@@ -30,9 +30,6 @@ function getProduct() {
         })
         $("#items-container").append(itemList);
       })
-    //   .catch(err) 
-    //     document.getElementById("#items-container").innerHTML = err.message;
-    // }
 
 
   // url = "https://www.googleapis.com/youtube/v3/search?part =snippet &maxResults=10&q=COVID-19&key=AIzaSyCORX3JUBUgtVvHFsyzFG2AbTk_ABCat4g"
@@ -49,9 +46,6 @@ function getProduct() {
   //   $("#items-container").html(results)
   //   })
 
-  //   .catch(err) 
-  //     document.getElementById("#items-container").innerHTML = err.message;
-    
   // }
 
   function stats() {
@@ -66,7 +60,7 @@ function getProduct() {
       .then(response => response.json())
 
       .then(responseJson => {
-        let stats = responseJson.totalDeaths.totalDeaths
+        let stats = responseJson.totalDeaths.Deaths
         let statsList = ""
 
         stats.forEach(item => {
@@ -74,9 +68,6 @@ function getProduct() {
           <br> Newly confirmed: ${item.newlyConfirmedCases} <br> Total daeths: ${item.totalDeaths} <br> <span class="new_deaths">New deaths: ${item.newDeaths}<br></li>`
         })
       })  
-    //   .catch(err) 
-    //     document.getElementById("#items-container").innerHTML = err.message;
-    // }
     stats();
     
   
@@ -104,6 +95,7 @@ function watchForm() {
   }
 
 (function() {
-  // watchForm();
+  watchForm();
   getProduct();
-})()
+})
+// ()
