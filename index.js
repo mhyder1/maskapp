@@ -61,21 +61,19 @@ function getProduct() {
         })
 
 
-    // try {
+        // try {
 
-    //   url('Start of try runs');  // (1) <--
-    
-    //   // ...no errors here
-    
-    //   url('End of try runs');   // (2) <--
-    
-    // } catch(err) {
-    
-    //   url('Catch is ignored, because there are no errors'); // (3)
-    
-    // }
+        //   videoId('Start of videos');  // (1) <--
+        
+        //   videoId('End of try (never reached)');  // (2)
+        
+        // } catch(err) {
+        
+        //  videoId(`Error has occurred!`); // (3) <--
+        
+        }
   // }) 
- }
+//  }
   
 
    function stats() {
