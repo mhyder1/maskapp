@@ -60,7 +60,7 @@ function getProduct() {
   //     .then(response => response.json())
 
   //     .then(responseJson => {
-  //       let stats = responseJson.totalDeaths.Deaths
+  //       let stats = responseJson.totalDeaths.newDeaths
   //       let statsList = ""
 
   //       stats.forEach(item => {
