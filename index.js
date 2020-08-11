@@ -32,62 +32,78 @@ function getProduct() {
       })
 
 
-  url = "https://www.googleapis.com/youtube/v3/search?part =snippet &maxResults=10&q=COVID-19&key=AIzaSyCORX3JUBUgtVvHFsyzFG2AbTk_ABCat4g"
-  fetch(url) 
-    .then(res => res.json())
-    .then(data => {
-    let results = ""
-    data.items.forEach(video => {
-      results += `
-        <iframe id="ytplayer" type="text/html" width="200" height="200" 
-        src="https://www.youtube.com/embed/${video.id.videoId}?autoplay=0" frameborder="0"></iframe>
-      `
-    })
-    $("#items-container").html(results)
-    })
 
-  }
+      // try {
 
-  // function stats() {
+      //   getProduct('Start of videos');  // (1) <--
+      
+      //   getProduct('End of try (never reached)');  // (2)
+      
+      // } catch(err) {
+      
+      //  getProduct(`Error has occurred!`); // (3) <--
+      
+      // }
+
+
+      url = "https://www.googleapis.com/youtube/v3/search?part =snippet &maxResults=10&q=COVID-19&key=AIzaSyCORX3JUBUgtVvHFsyzFG2AbTk_ABCat4g"
+      fetch(url) 
+        .then(res => res.json())
+        .then(data => {
+        let results = ""
+        data.items.forEach(video => {
+          results += `
+            <iframe id="ytplayer" type="text/html" width="200" height="200" 
+            src="https://www.youtube.com/embed/${video.id.videoId}?autoplay=0" frameborder="0"></iframe>
+          `
+        })
+        $("#items-container").html(results)
+        })
+
+
+    // try {
+
+    //   url('Start of try runs');  // (1) <--
     
-  //   const url = "https://api.smartable.ai/coronavirus/stats/US";
-
-  //   fetch(url, {
-  //     headers: {
-  //       "Subscription-Key": "758efda7ac81492daebae5d0886cbd78"
-  //     } 
-  //   })
-  //     .then(response => response.json())
-
-  //     .then(responseJson => {
-  //       let stats = responseJson.totalDeaths.newDeaths
-  //       let statsList = ""
-
-  //       stats.forEach(item => {
-  //         statsList += `<li data-id=${item.location}><span class ="total_confirmed">${item.totalConfirmedCases}</span> 
-  //         <br> Newly confirmed: ${item.newlyConfirmedCases} <br> Total daeths: ${item.totalDeaths} <br> <span class="new_deaths">New deaths: ${item.newDeaths}<br></li>`
-  //       })
-  //     })
-
-  //   } 
-  //   stats();
+    //   // ...no errors here
     
+    //   url('End of try runs');   // (2) <--
+    
+    // } catch(err) {
+    
+    //   url('Catch is ignored, because there are no errors'); // (3)
+    
+    // }
+  // }) 
+ }
   
-  
-  // make a few API calls then join them to the DOM
-  //Start with one API at a time
-  //Chartjs
 
-  //Base url run in postman and add in your key value for youtube video
-  // const params = 
-  // { part: "snippet", maxResults: 5, q: ${"How to make a cocktail"} + searchTerm, relevanceLanguage: "en", key: videoApiKey };
+   function stats() {
+    
+    const url = "https://api.smartable.ai/coronavirus/stats/US";
 
+    fetch(url, {
+      headers: {
+        "Subscription-Key": "758efda7ac81492daebae5d0886cbd78"
+      } 
+    })
+      .then(response => response.json())
 
+      .then(responseJson => {
+        let stats = responseJson.totalDeaths.newDeaths
+        let statsList = ""
 
-  // Call a function that fetches the api for news, twitter, youtube and stats for 
- // coronavirus this information will be rendering data from a company called 
-//  Centers for Disease Control and Prevention follow structure for getProduct function
-// call this function getStats
+        stats.forEach(item => {
+          statsList += `<li data-id=${item.location}><span class ="total_confirmed">${item.totalConfirmedCases}</span> 
+          <br> Newly confirmed: ${item.newlyConfirmedCases} <br> Total daeths: ${item.totalDeaths} <br> <span class="new_deaths">New deaths: ${item.newDeaths}<br></li>`
+        })
+      })
+
+    } 
+    stats();
+
+    
+    
 
 function watchForm() {
     $('form').submit(event => {
@@ -99,4 +115,5 @@ function watchForm() {
 (function() {
   //watchForm();
   getProduct();
+  // stats();
 })()

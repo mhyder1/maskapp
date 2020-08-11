@@ -12,4 +12,7 @@ The technologies used for this app are CSS, HTML, Javascript. Fetching from two 
 
 Live link: https://malasia-415-shop-site-io.vercel.app/
 
+Screenshot of live project:
+
+
 # Online shopping 

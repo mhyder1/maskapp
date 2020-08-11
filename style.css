@@ -1,8 +1,12 @@
+@media screen and (max-width: 2000px) {
 body {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/06/Solid-color-hd-wallpapers-download.jpg");
+    max-width: 970px;
+    overflow: unset;
+    background-color: burlywood;
   }
+} 
 
   .title {
     font-weight: bold;
@@ -19,6 +23,7 @@ body {
     display: table-caption;
     align-items: flex-end;
     border-style: groove;
+    border-color: black;
     min-width: max-content;
   }
   
@@ -38,7 +43,7 @@ body {
   }
   
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: black;
     color: black;
   }
   
