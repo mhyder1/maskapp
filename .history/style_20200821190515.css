@@ -19,8 +19,6 @@ input[type="text"], input[type="number"] {
   display: block;
   border: 1px solid lightblue;
   border-radius: 5px;
-  padding-left: 5px;
-  font-size: larger;
 }
 
 form {
@@ -41,11 +39,6 @@ form {
   margin-bottom: 10px;
 }
 
-#items-container img {
-  border: 1px solid white;
-  width: 47%;
-}
-
 
 .mask-list p {
   margin: 5px 0;
@@ -62,20 +55,10 @@ form {
     align-self: center;
     height: fit-content;
   }
-
-  input[type="text"], input[type="number"] {
-    width: 150px;
-  }
-
-  body {
-    margin: 0 10%;
-  }
 }  
 
 @media screen and (min-width: 1024px) {   /* desktop view - 1024 and up*/
-  body {
-    margin: 0 20%;
-  }
+ 
 }  
 
 

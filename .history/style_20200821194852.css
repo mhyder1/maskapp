@@ -42,8 +42,7 @@ form {
 }
 
 #items-container img {
-  border: 1px solid white;
-  width: 47%;
+  margin: 2px;
 }
 
 

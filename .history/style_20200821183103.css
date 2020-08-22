@@ -6,76 +6,29 @@ header h1 {
   text-align: center;
 }
 
-header p {
-  font-size: larger;
-}
-
 label {
   display: block;
-  margin-bottom: 10px;
 }
+
+
 
 input[type="text"], input[type="number"] {
   display: block;
-  border: 1px solid lightblue;
-  border-radius: 5px;
-  padding-left: 5px;
-  font-size: larger;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#items-container {
-  list-style: none;
-  padding: 0;
-}
-
-#items-container li {
-  border: 1px solid gray;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-#items-container img {
-  border: 1px solid white;
-  width: 47%;
-}
-
-
-.mask-list p {
-  margin: 5px 0;
+input[type="submit"] {
+  align-self: flex-end;
 }
 
 @media screen and (min-width: 768px) {   /* tablet view - 768 and up*/
   form {
     display: flex;
     justify-content: space-evenly;
-    flex-direction: row;
-  }
-  
-  input[type="submit"] {
-    align-self: center;
-    height: fit-content;
-  }
-
-  input[type="text"], input[type="number"] {
-    width: 150px;
-  }
-
-  body {
-    margin: 0 10%;
   }
 }  
 
 @media screen and (min-width: 1024px) {   /* desktop view - 1024 and up*/
-  body {
-    margin: 0 20%;
-  }
+ 
 }  
 
 

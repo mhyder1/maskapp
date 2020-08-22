@@ -1,6 +1,7 @@
 
 // color, keyword, material, max_price
 function getMasks(color='', keyword='', price, material='') {
+  console.log(color, keyword, price, material)
   showLoading()
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
   const url = "https://openapi.etsy.com";
@@ -13,17 +14,11 @@ function getMasks(color='', keyword='', price, material='') {
     .then(responseJson => {
       displayMasks(responseJson)
     })
-}
+  }
 
 function showLoading() {
   let img = `<img width="50%" style="margin:0 auto;display:block;" src="https://cdn.lowgif.com/full/c57c4d0d4333569d-index-of-skin-frontend-sns-amoda-default-images.gif" />`
   $("#items-container").html(img);
-}
-
-function displayImages(images) {
-  return images.map(img => {
-    return `<img class="image" src="${img.url_170x135}" />`
-  }).join('')
 }
 
 function displayMasks(responseJson) {
@@ -35,7 +30,7 @@ function displayMasks(responseJson) {
       <span class="title"> <a href="${item.url}" target="_blank">${item.title}</a></span> 
       <p>Made of: ${item.materials}</p> 
       <p class="price">Price: $${item.price}</p>
-      ${displayImages(item.Images)}
+      <img src="${item.Images[0].url_170x135}" />
     </li>`
   })
   $("#items-container").html(itemList);

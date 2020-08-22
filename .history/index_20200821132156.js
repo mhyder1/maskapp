@@ -1,7 +1,7 @@
 
 // color, keyword, material, max_price
-function getMasks(color='', keyword='', price, material='') {
-  showLoading()
+function getMasks(color='', keyword='', price='', material='') {
+  console.log(color, keyword, price, material)
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
   const url = "https://openapi.etsy.com";
   const path = `/v2/listings/active?limit=20&keywords=face%20mask&tags=${keyword},${material},${color}&max_price=${price}&includes=Images`;
@@ -13,33 +13,21 @@ function getMasks(color='', keyword='', price, material='') {
     .then(responseJson => {
       displayMasks(responseJson)
     })
-}
+  }
 
-function showLoading() {
-  let img = `<img width="50%" style="margin:0 auto;display:block;" src="https://cdn.lowgif.com/full/c57c4d0d4333569d-index-of-skin-frontend-sns-amoda-default-images.gif" />`
-  $("#items-container").html(img);
-}
+  function displayMasks(responseJson) {
+    let items = responseJson.results
+    let itemList = ""
 
-function displayImages(images) {
-  return images.map(img => {
-    return `<img class="image" src="${img.url_170x135}" />`
-  }).join('')
-}
-
-function displayMasks(responseJson) {
-  let items = responseJson.results
-  let itemList = ""
-  items.forEach(item => {
-    itemList += `
-    <li class="mask-list">
-      <span class="title"> <a href="${item.url}" target="_blank">${item.title}</a></span> 
-      <p>Made of: ${item.materials}</p> 
-      <p class="price">Price: $${item.price}</p>
-      ${displayImages(item.Images)}
-    </li>`
-  })
-  $("#items-container").html(itemList);
-}
+    items.forEach(item => {
+      itemList += `<li data-id=${item.listing_id}><span class ="title"> <a href = ${item.url}> ${item.title} </a></span> 
+        <br> Made of: ${item.materials} <br> Production: ${item.when_made} <br> <span class="price">Price: ${item.price},</span> ${item.currency_code}<br><br>
+        <img src="${item.Images[0].url_170x135}" />
+        </li>`
+      
+    })
+    $("#items-container").html(itemList);
+  }
   
 
    function stats() {
@@ -52,9 +40,11 @@ function displayMasks(responseJson) {
       } 
     })
       .then(response => response.json())
+
       .then(responseJson => {
         let stats = responseJson.totalDeaths.newDeaths
         let statsList = ""
+
         stats.forEach(item => {
           statsList += `<li data-id=${item.location}><span class ="total_confirmed">${item.totalConfirmedCases}</span> 
           <br> Newly confirmed: ${item.newlyConfirmedCases} <br> Total daeths: ${item.totalDeaths} <br> <span class="new_deaths">New deaths: ${item.newDeaths}<br></li>`
@@ -77,7 +67,7 @@ function watchForm() {
       event.preventDefault();
       const color = $('#mask-color').val()
       const keyword = $('#mask-keyword').val()
-      const price = $('#mask-price').val() || 20
+      const price = $('#mask-price').val()
       const material = $('#mask-material').val()
       clearForm()
       getMasks(color, keyword, price, material);

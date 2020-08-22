@@ -20,12 +20,6 @@ function showLoading() {
   $("#items-container").html(img);
 }
 
-function displayImages(images) {
-  return images.map(img => {
-    return `<img class="image" src="${img.url_170x135}" />`
-  }).join('')
-}
-
 function displayMasks(responseJson) {
   let items = responseJson.results
   let itemList = ""
@@ -35,7 +29,7 @@ function displayMasks(responseJson) {
       <span class="title"> <a href="${item.url}" target="_blank">${item.title}</a></span> 
       <p>Made of: ${item.materials}</p> 
       <p class="price">Price: $${item.price}</p>
-      ${displayImages(item.Images)}
+      <img src="${item.Images[0].url_170x135}" />
     </li>`
   })
   $("#items-container").html(itemList);

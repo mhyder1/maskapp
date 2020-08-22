@@ -41,11 +41,6 @@ form {
   margin-bottom: 10px;
 }
 
-#items-container img {
-  border: 1px solid white;
-  width: 47%;
-}
-
 
 .mask-list p {
   margin: 5px 0;
@@ -61,10 +56,6 @@ form {
   input[type="submit"] {
     align-self: center;
     height: fit-content;
-  }
-
-  input[type="text"], input[type="number"] {
-    width: 150px;
   }
 
   body {

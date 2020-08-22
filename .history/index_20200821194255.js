@@ -22,10 +22,10 @@ function showLoading() {
 
 function displayImages(images) {
   return images.map(img => {
-    return `<img class="image" src="${img.url_170x135}" />`
+    return `<img src="${img.url_170x135}" />`
   }).join('')
 }
-
+//<img src="${item.Images[0].url_170x135}" />
 function displayMasks(responseJson) {
   let items = responseJson.results
   let itemList = ""
